@@ -358,7 +358,7 @@
           document.getElementById('halaman-user').classList.remove('hidden');
         } else if (peran === 'admin') {
           document.getElementById('halaman-admin').classList.remove('hidden');
-          muatDataAdmin(); // Ambil data saat masuk halaman admin
+          muatDataAdmin(); 
         }
       }
 
@@ -371,28 +371,24 @@
 
       // 3. Fungsi Memproses Pesanan (User)
       function prosesPesanan(event) {
-        event.preventDefault(); // Mencegah form melakukan reload halaman
+        event.preventDefault(); 
 
-        // Ambil data dari form
         const pesananBaru = {
           waktu: new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' }),
           nama: document.getElementById('nama').value,
           merek: document.getElementById('merek').value,
           nowa: document.getElementById('nowa').value,
           alamat: document.getElementById('antar').value.trim() || "Ambil sendiri ke depot",
-          status: "Sedang Diproses ⏳"
+          status: "Baru 🆕" // <-- Status awal pesanan baru
         };
 
-        // Simpan ke localStorage di Browser
         let daftarPesanan = JSON.parse(localStorage.getItem('dataPesananKelompok')) || [];
         daftarPesanan.push(pesananBaru);
         localStorage.setItem('dataPesananKelompok', JSON.stringify(daftarPesanan));
 
-        // Buat estimasi waktu random
         const minWaktu = Math.floor(Math.random() * 10) + 10; 
         document.getElementById('teks-estimasi').innerText = `${minWaktu} - ${minWaktu + 15} Menit`;
 
-        // Munculkan popup & bersihkan form
         document.getElementById('popup-sukses').classList.remove('hidden');
         document.getElementById('form-pesan').reset();
       }
@@ -409,14 +405,15 @@
 
         let daftarPesanan = JSON.parse(localStorage.getItem('dataPesananKelompok')) || [];
 
-        // Jika data kosong
         if (daftarPesanan.length === 0) {
-          tabel.innerHTML = "<tr><td colspan='6' style='text-align:center;'>Belum ada pesanan masuk. Coba login sebagai Pelanggan dan buat pesanan.</td></tr>";
+          tabel.innerHTML = "<tr><td colspan='6' style='text-align:center; padding: 2rem;'>Belum ada pesanan masuk. Coba login sebagai Pelanggan dan buat pesanan.</td></tr>";
           return;
         }
 
-        // Tampilkan urutan terbalik (pesanan terbaru di atas)
-        daftarPesanan.reverse().forEach((pesanan) => {
+        // Loop mundur agar data terbaru ada di paling atas, tapi index-nya tetap akurat
+        for (let i = daftarPesanan.length - 1; i >= 0; i--) {
+          let pesanan = daftarPesanan[i];
+          
           tabel.innerHTML += `
             <tr>
               <td><strong>${pesanan.waktu}</strong></td>
@@ -424,10 +421,31 @@
               <td>${pesanan.nowa}</td>
               <td>${pesanan.merek}</td>
               <td>${pesanan.alamat}</td>
-              <td style="color: #FFB703; font-weight: bold;">${pesanan.status}</td>
+              <td>
+                <select class="select-status" onchange="ubahStatus(${i}, this.value)">
+                  <option value="Baru 🆕" ${pesanan.status === 'Baru 🆕' ? 'selected' : ''}>Baru 🆕</option>
+                  <option value="Sedang Diproses ⏳" ${pesanan.status === 'Sedang Diproses ⏳' ? 'selected' : ''}>Sedang Diproses ⏳</option>
+                  <option value="Selesai ✅" ${pesanan.status === 'Selesai ✅' ? 'selected' : ''}>Selesai ✅</option>
+                  <option value="Dibatalkan ❌" ${pesanan.status === 'Dibatalkan ❌' ? 'selected' : ''}>Dibatalkan ❌</option>
+                </select>
+              </td>
             </tr>
           `;
-        });
+        }
+      }
+
+      // 6. Fungsi Baru: Mengubah & Menyimpan Status dari Admin
+      function ubahStatus(indexPesanan, statusBaru) {
+        // Ambil data lama
+        let daftarPesanan = JSON.parse(localStorage.getItem('dataPesananKelompok')) || [];
+        
+        // Ubah status pada urutan yang dipilih
+        if (daftarPesanan[indexPesanan]) {
+          daftarPesanan[indexPesanan].status = statusBaru;
+          
+          // Simpan kembali ke localStorage
+          localStorage.setItem('dataPesananKelompok', JSON.stringify(daftarPesanan));
+        }
       }
     </script>
   </body>
