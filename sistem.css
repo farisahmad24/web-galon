@@ -139,3 +139,18 @@
   border-bottom: 1px solid #FFB703; 
   font-family: sans-serif;
 }
+/* --- Tambahan untuk Dropdown Status Admin --- */
+.select-status {
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  border: 1.5px solid #00B4D8;
+  background-color: #f9f9f9;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #023E8A;
+  cursor: pointer;
+  outline: none;
+}
+.select-status:focus {
+  border-color: #023E8A;
+}
