@@ -5,18 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AIRES MINERAL - Depot Isi Ulang Air Minum</title>
     
-    <!-- 1. CSS Utama Kelompok (Untuk User) -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- 2. CSS Sistem (Untuk Login, Admin, dan Popup) -->
     <link rel="stylesheet" href="sistem.css">
   </head>
 
   <body>
 
-    <!-- ==========================================
-         HALAMAN 1: LOGIN (PILIH PERAN)
-    =========================================== -->
     <div id="halaman-login">
       <div class="login-box">
         <h2 style="color: #023E8A; margin-bottom: 0.5rem;">💧 AIRES MINERAL</h2>
@@ -28,9 +23,6 @@
     </div>
 
 
-    <!-- ==========================================
-         HALAMAN 2: DASHBOARD ADMIN
-    =========================================== -->
     <div id="halaman-admin" class="hidden">
       <div class="admin-header">
         <div>
@@ -38,7 +30,7 @@
           <p>Daftar pesanan masuk dari website</p>
         </div>
         <div>
-          <button class="btn-login user" onclick="muatDataAdmin()" style="display:inline-block; width:auto; padding:0.5rem 1rem; margin:0 10px 0 0;">🔄 Refresh</button>
+          <button class="btn-login user" onclick="muatDataAdmin()" style="display:inline-block; width:auto; padding:0.5rem 1rem; margin:0 10px 0 0;">🔄 Refresh Data</button>
           <button class="btn-merah" onclick="keluar()">🚪 Keluar</button>
         </div>
       </div>
@@ -55,18 +47,13 @@
           </tr>
         </thead>
         <tbody id="tabel-pesanan">
-          <!-- Data dari JavaScript akan masuk ke sini -->
-        </tbody>
+          </tbody>
       </table>
     </div>
 
 
-    <!-- ==========================================
-         HALAMAN 3: TAMPILAN USER (Desain Kelompok)
-    =========================================== -->
     <div id="halaman-user" class="hidden">
       
-      <!-- Bar Logout Khusus User -->
       <div class="user-bar">
         <span>Kamu masuk sebagai <strong>Pelanggan</strong></span>
         <button class="btn-merah" onclick="keluar()" style="font-size: 0.8rem;">Ganti Akun</button>
@@ -85,16 +72,15 @@
         <ul>
           <li><a href="#tentang">Tentang Kami</a></li>
           <li><a href="#visi-misi">Visi &amp; Misi</a></li>
-          <li><a href="#keunggulan">Keunggulan &amp; Jam Operasional</a></li>
+          <li><a href="#keunggulan">Keunggulan &amp; Jam</a></li>
           <li><a href="#produk">Produk &amp; Harga</a></li>
           <li><a href="#ulasan">Ulasan Pelanggan</a></li>
-          <li><a href="#pemesanan">Pemesanan &amp; Kontak</a></li>
+          <li><a href="#pemesanan">Pemesanan &amp; Riwayat</a></li>
         </ul>
       </nav>
 
       <main>
 
-        <!-- SECTION: TENTANG -->
         <section id="tentang">
           <h2>Tentang Kami</h2>
           <h3>Sambutan</h3>
@@ -104,18 +90,15 @@
             penyaringan yang canggih dan proses pengolahan yang ketat, kami menjamin air minum kami
             aman dan sehat untuk dikonsumsi.
           </p>
-
           <h3>Sejarah Usaha</h3>
           <p>
             AIRES MINERAL didirikan pada <strong>28 Mei 2023</strong> dengan tujuan menyediakan air
             minum yang sehat, berkualitas, dan terjangkau untuk masyarakat. Berawal dari komitmen
             memenuhi kebutuhan sehari-hari dengan pelayanan yang cepat dan ramah, kami terus
-            berkembang hingga kini melayani berbagai kalangan, mulai dari rumah tangga, mahasiswa,
-            penghuni kos dan kontrakan, pelaku usaha, hingga perkantoran.
+            berkembang hingga kini melayani berbagai kalangan.
           </p>
         </section>
 
-        <!-- SECTION: VISI & MISI -->
         <section id="visi-misi">
           <h2>Visi &amp; Misi</h2>
           <h3>Visi</h3>
@@ -133,7 +116,6 @@
           </ol>
         </section>
 
-        <!-- SECTION: KEUNGGULAN -->
         <section id="keunggulan">
           <h2>Keunggulan &amp; Jam Operasional</h2>
           <h3>Keunggulan Kami</h3>
@@ -145,7 +127,6 @@
             <li>Tersedia layanan antar langsung ke lokasi Anda</li>
             <li>Diskon spesial untuk pelanggan setia</li>
           </ul>
-
           <h3>Jam Operasional</h3>
           <p>
             <strong>Senin – Minggu</strong><br />
@@ -153,7 +134,6 @@
           </p>
         </section>
 
-        <!-- SECTION: PRODUK -->
         <section id="produk">
           <h2>Produk &amp; Harga</h2>
           <p><em>Klik gambar untuk memperbesar. Foto produk akan ditampilkan pada masing-masing kartu di bawah ini.</em></p>
@@ -162,21 +142,21 @@
             <h3>Isi Ulang Galon</h3>
             <h4>Datang Langsung ke Depot</h4>
             <figure>
-              <img src="img/galon isi.webp" alt="Foto layanan isi ulang galon di depot" width="300" />
+              <img src="img/galon isi.webp" alt="Layanan isi ulang galon di depot" width="300" />
               <figcaption>Layanan Isi Ulang – Datang ke Depot</figcaption>
             </figure>
             <p>Harga: <strong>Rp 4.000</strong> / galon</p>
 
             <h4>Diantar – Area Kampung Baru</h4>
             <figure>
-              <img src="img/antar galon.jpeg" alt="Foto layanan antar galon area Kampung Baru" width="300" />
+              <img src="img/antar galon.jpeg" alt="Layanan antar galon area Kampung Baru" width="300" />
               <figcaption>Layanan Antar – Area Kampung Baru</figcaption>
             </figure>
             <p>Harga: <strong>Rp 6.000</strong> / galon</p>
 
             <h4>Diantar – Luar Kampung Baru</h4>
             <figure>
-              <img src="img/antar galon.jpeg" alt="Foto layanan antar galon luar area" width="300" />
+              <img src="img/antar galon.jpeg" alt="Layanan antar galon luar area" width="300" />
               <figcaption>Layanan Antar – Luar Kampung Baru</figcaption>
             </figure>
             <p>Harga: <strong>Rp 7.000</strong> / galon</p>
@@ -220,7 +200,6 @@
           </article>
         </section>
 
-        <!-- SECTION: ULASAN -->
         <section id="ulasan">
           <h2>Ulasan Pelanggan</h2>
           <p><em>Berikut adalah ulasan jujur dari pelanggan kami.</em></p>
@@ -246,30 +225,18 @@
           </article>
         </section>
 
-        <!-- SECTION: PEMESANAN (TERHUBUNG KE JAVASCRIPT LOCALSTORAGE) -->
         <section id="pemesanan">
-          <h2>Pemesanan &amp; Kontak</h2>
-
-          <h3>Lokasi Depot</h3>
+          <h2>Pemesanan Langsung</h2>
           <address>
             Jalan M. Said, Belakang Gedung Teknik Universitas Lampung (Unila)<br />
             Gang M. Said, Kampung Baru, Bandar Lampung
           </address>
 
-          <h3>Hubungi Kami</h3>
-          <ul>
-            <li>
-              <strong>WhatsApp / Telepon:</strong>
-              <a href="tel:+6281377848890">0813-7784-8890</a>
-            </li>
-          </ul>
-
           <h3>Form Pemesanan</h3>
-          <p>Isi form di bawah ini. Pesanan akan langsung masuk ke sistem pemilik depot tanpa harus mengirim chat WA.</p>
+          <p>Isi form di bawah ini. Pesanan akan langsung masuk ke sistem pemilik depot.</p>
 
           <div class="form-pesan">
             <form id="form-pesan" onsubmit="prosesPesanan(event)">
-
               <div class="form-group">
                 <label for="nama">Nama Lengkap <span class="wajib">*</span></label>
                 <input type="text" id="nama" name="nama" placeholder="Contoh: Budi Santoso" required />
@@ -311,25 +278,30 @@
               </button>
             </form>
           </div>
-          <section id="riwayat" style="margin-top: 2rem;">
-          <h2>Riwayat & Status Pesanan</h2>
-          <p>Pantau status pesanan yang telah Anda buat di sini secara *real-time*.</p>
+        </section>
+
+        <section id="riwayat" style="background-color: var(--clr-putih, #ffffff); padding: 2rem; border-radius: 12px; margin-top: 2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+          <h2 style="color: #023E8A; margin-bottom: 0.5rem; font-size: 1.5rem; border-bottom: 2px solid #00B4D8; padding-bottom: 0.5rem; display: inline-block;">Riwayat & Status Pesanan</h2>
+          <p style="color: #666; margin-bottom: 1rem;">Pantau status pesanan yang telah Anda buat. Jika Admin sudah memproses, klik tombol Refresh di bawah ini.</p>
           
-          <div style="overflow-x: auto; margin-top: 1rem;">
-            <table class="tabel-admin">
+          <button type="button" onclick="refreshRiwayatUser()" style="background: #00B4D8; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; margin-bottom: 15px; font-size: 0.9rem; transition: background 0.2s;">
+            🔄 Refresh Status
+          </button>
+
+          <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 0.9rem; text-align: left;">
               <thead>
-                <tr>
-                  <th>Waktu</th>
-                  <th>Nama Pemesan</th>
-                  <th>Produk</th>
-                  <th>Status Saat Ini</th>
+                <tr style="background-color: #023E8A; color: white;">
+                  <th style="padding: 12px;">Waktu</th>
+                  <th style="padding: 12px;">Nama Pemesan</th>
+                  <th style="padding: 12px;">Produk</th>
+                  <th style="padding: 12px;">Status Saat Ini</th>
                 </tr>
               </thead>
               <tbody id="tabel-riwayat-user">
                 </tbody>
             </table>
           </div>
-        </section>
         </section>
 
       </main>
@@ -346,9 +318,6 @@
     </div>
 
 
-    <!-- ==========================================
-         POPUP MODAL (BERHASIL PESAN)
-    =========================================== -->
     <div id="popup-sukses" class="modal-overlay hidden">
       <div class="modal-box">
         <div style="font-size: 4rem;">✅</div>
@@ -360,21 +329,19 @@
           <strong id="teks-estimasi" style="font-size: 1.5rem; color: #023E8A;">15 - 30 Menit</strong>
         </div>
 
-        <button class="btn-login user" onclick="tutupPopup()" style="width: auto; padding: 0.8rem 2rem;">Tutup</button>
+        <button class="btn-login user" onclick="tutupPopup()" style="width: auto; padding: 0.8rem 2rem; margin: 0 auto;">Tutup</button>
       </div>
     </div>
 
 
-    <!-- ==========================================
-         LOGIKA JAVASCRIPT APLIKASI
-    =========================================== -->
-   <script>
+    <script>
       // 1. Fungsi Navigasi / Login
       function masukSebagai(peran) {
         document.getElementById('halaman-login').classList.add('hidden');
         
         if (peran === 'user') {
           document.getElementById('halaman-user').classList.remove('hidden');
+          muatRiwayatUser(); // Tampilkan riwayat saat User baru masuk
         } else if (peran === 'admin') {
           document.getElementById('halaman-admin').classList.remove('hidden');
           muatDataAdmin(); 
@@ -398,7 +365,7 @@
           merek: document.getElementById('merek').value,
           nowa: document.getElementById('nowa').value,
           alamat: document.getElementById('antar').value.trim() || "Ambil sendiri ke depot",
-          status: "Baru 🆕" // <-- Status awal pesanan baru
+          status: "Baru 🆕"
         };
 
         let daftarPesanan = JSON.parse(localStorage.getItem('dataPesananKelompok')) || [];
@@ -410,11 +377,16 @@
 
         document.getElementById('popup-sukses').classList.remove('hidden');
         document.getElementById('form-pesan').reset();
+
+        // Update tabel riwayat seketika setelah memesan
+        muatRiwayatUser();
       }
 
       // 4. Fungsi Tutup Popup
       function tutupPopup() {
         document.getElementById('popup-sukses').classList.add('hidden');
+        // Otomatis geser layar ke bagian riwayat pesanan
+        window.location.hash = "#riwayat";
       }
 
       // 5. Fungsi Menampilkan Data di Admin
@@ -425,14 +397,13 @@
         let daftarPesanan = JSON.parse(localStorage.getItem('dataPesananKelompok')) || [];
 
         if (daftarPesanan.length === 0) {
-          tabel.innerHTML = "<tr><td colspan='6' style='text-align:center; padding: 2rem;'>Belum ada pesanan masuk. Coba login sebagai Pelanggan dan buat pesanan.</td></tr>";
+          tabel.innerHTML = "<tr><td colspan='6' style='text-align:center; padding: 2rem;'>Belum ada pesanan masuk.</td></tr>";
           return;
         }
 
-        // Loop mundur agar data terbaru ada di paling atas, tapi index-nya tetap akurat
+        // Loop mundur agar data pesanan terbaru muncul paling atas
         for (let i = daftarPesanan.length - 1; i >= 0; i--) {
           let pesanan = daftarPesanan[i];
-          
           tabel.innerHTML += `
             <tr>
               <td><strong>${pesanan.waktu}</strong></td>
@@ -441,7 +412,7 @@
               <td>${pesanan.merek}</td>
               <td>${pesanan.alamat}</td>
               <td>
-                <select class="select-status" onchange="ubahStatus(${i}, this.value)">
+                <select class="select-status" onchange="ubahStatus(${i}, this.value)" style="padding: 0.4rem; border-radius: 4px; border: 1.5px solid #00B4D8; font-weight:bold; cursor:pointer; outline:none;">
                   <option value="Baru 🆕" ${pesanan.status === 'Baru 🆕' ? 'selected' : ''}>Baru 🆕</option>
                   <option value="Sedang Diproses ⏳" ${pesanan.status === 'Sedang Diproses ⏳' ? 'selected' : ''}>Sedang Diproses ⏳</option>
                   <option value="Selesai ✅" ${pesanan.status === 'Selesai ✅' ? 'selected' : ''}>Selesai ✅</option>
@@ -453,18 +424,51 @@
         }
       }
 
-      // 6. Fungsi Baru: Mengubah & Menyimpan Status dari Admin
+      // 6. Fungsi Mengubah Status dari Admin
       function ubahStatus(indexPesanan, statusBaru) {
-        // Ambil data lama
         let daftarPesanan = JSON.parse(localStorage.getItem('dataPesananKelompok')) || [];
-        
-        // Ubah status pada urutan yang dipilih
         if (daftarPesanan[indexPesanan]) {
           daftarPesanan[indexPesanan].status = statusBaru;
-          
-          // Simpan kembali ke localStorage
           localStorage.setItem('dataPesananKelompok', JSON.stringify(daftarPesanan));
         }
+      }
+
+      // 7. Fungsi Menampilkan Riwayat untuk User
+      function muatRiwayatUser() {
+        const tabel = document.getElementById('tabel-riwayat-user');
+        tabel.innerHTML = ""; 
+
+        let daftarPesanan = JSON.parse(localStorage.getItem('dataPesananKelompok')) || [];
+
+        if (daftarPesanan.length === 0) {
+          tabel.innerHTML = "<tr><td colspan='4' style='text-align:center; padding: 1.5rem; background: #f9f9f9;'>Belum ada riwayat pesanan. Silakan isi form di atas.</td></tr>";
+          return;
+        }
+
+        for (let i = daftarPesanan.length - 1; i >= 0; i--) {
+          let pesanan = daftarPesanan[i];
+          
+          // Warna teks berdasarkan status
+          let warnaStatus = "#023E8A"; 
+          if (pesanan.status.includes("Selesai")) warnaStatus = "#25D366"; 
+          if (pesanan.status.includes("Dibatalkan")) warnaStatus = "#E63946"; 
+          if (pesanan.status.includes("Diproses")) warnaStatus = "#FFB703"; 
+
+          tabel.innerHTML += `
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 12px;"><strong>${pesanan.waktu}</strong></td>
+              <td style="padding: 12px;">${pesanan.nama}</td>
+              <td style="padding: 12px;">${pesanan.merek}</td>
+              <td style="padding: 12px; color: ${warnaStatus}; font-weight: bold;">${pesanan.status}</td>
+            </tr>
+          `;
+        }
+      }
+
+      // 8. Fungsi Tombol Refresh User
+      function refreshRiwayatUser() {
+        muatRiwayatUser();
+        alert("Status pesanan telah diperbarui!");
       }
     </script>
   </body>
